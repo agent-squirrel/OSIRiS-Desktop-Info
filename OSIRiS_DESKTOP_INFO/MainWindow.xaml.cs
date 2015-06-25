@@ -25,11 +25,7 @@ namespace OSIRiS_DESKTOP_INFO
         public MainWindow()
         {
             InitializeComponent();
-            if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
-            {
-                MessageBox.Show("This program is already running.", "OSIRiS Desktop Info");
-                Application.Current.Shutdown();
-            }
+
             //Initilize the labels with WMI queries.
             CPUlabel.Content += getcpu();
             RAMlabel.Content += getram();

@@ -10,3 +10,15 @@ C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS_D
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.csproj.GenerateResource.Cache
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.exe
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.pdb
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\bin\Release\OSIRiS_DESKTOP_INFO.exe.config
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.exe
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.pdb
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\bin\Release\OSIRiS_DESKTOP_INFO.exe
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\bin\Release\OSIRiS_DESKTOP_INFO.pdb
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\MainWindow.baml
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\MainWindow.g.cs
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\App.g.cs
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO_MarkupCompile.cache
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.g.resources
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.Properties.Resources.resources
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.csproj.GenerateResource.Cache
