@@ -90,7 +90,7 @@ namespace OSIRiS_DESKTOP_INFO
                 try
                 {
                     disk = Math.Round(((((double)Convert.ToDouble(wmi["Size"]) / 1024) / 1024) / 1024), 2);
-                    return disk.ToString();
+                    return disk.ToString() + " GB";
                 }
                 catch
                 {
