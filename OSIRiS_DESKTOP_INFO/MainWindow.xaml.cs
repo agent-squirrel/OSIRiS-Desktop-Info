@@ -52,17 +52,16 @@ namespace OSIRiS_DESKTOP_INFO
 
         public string getram()
         {
-            ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
-            ManagementObjectCollection moc = mc.GetInstances();
-            foreach (ManagementObject item in moc)
-            {
-                try
-                {
-                  return Convert.ToString(Math.Round(Convert.ToDouble(item.Properties["TotalPhysicalMemory"].Value) / 1073741824, 2)) + " GB";
-                }
-                catch { }
-            }
-            return "RAM: Unknown";
+            ManagementScope ms = new ManagementScope();
+	ObjectQuery oq = new ObjectQuery("SELECT Capacity FROM Win32_PhysicalMemory");
+	ManagementObjectSearcher mos = new ManagementObjectSearcher(ms, oq);
+	ManagementObjectCollection moc = mos.Get();
+	int amount = 0;
+	foreach (ManagementObject mo in moc)
+	{
+		amount += Convert.ToInt32(Convert.ToInt64(mo["Capacity"]) / 1024 / 1024 / 1024);
+	}
+	return amount + " GB";
         }
 
         public string getgpu()
