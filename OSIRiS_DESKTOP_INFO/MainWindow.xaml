@@ -4,18 +4,20 @@
         Title="INFOPANEL" Height="254.478" Width="708.582" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Cursor="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="{x:Null}" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <Border BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="40,40,40,40" Background="White">
         <Grid>
-            <Label x:Name="RAM" Content="RAM: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,49,0,0" FontSize="18" FontWeight="Bold"/>
-            <Label x:Name="GPU" Content="Graphics Card:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,88,0,0" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="RAM" Content="RAM: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,46,0,0" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="GPU1" Content="Graphics Card 1:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,78,0,0" FontSize="18" FontWeight="Bold"/>
             <Label x:Name="RES" Content="Screen Resolution: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,210,0,0" FontSize="18" FontWeight="Bold"/>
-            <Label x:Name="DRIVE" Content="Drive Size:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,137,0,0" FontSize="18" FontWeight="Bold"/>
-            <Label x:Name="OS" Content="Operating System:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,171,0,0" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="DRIVE" Content="Drive Size:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,142,0,0" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="OS" Content="Operating System:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,175,0,0" FontSize="18" FontWeight="Bold"/>
             <Label x:Name="CPU" Content="CPU: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,10,0,0" FontSize="18" FontWeight="Bold"/>
-            <Label x:Name="RAMlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="201,49,0,0" FontSize="18"/>
-            <Label x:Name="GPUlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="272,88,0,0" FontSize="18"/>
+            <Label x:Name="RAMlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="201,46,0,0" FontSize="18"/>
+            <Label x:Name="GPUlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="288,78,0,0" FontSize="18"/>
             <Label x:Name="RESlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="311,210,0,0" FontSize="18"/>
-            <Label x:Name="DRIVElabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,137,0,0" FontSize="18"/>
-            <Label x:Name="OSlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306,171,0,0" FontSize="18"/>
+            <Label x:Name="DRIVElabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,142,0,0" FontSize="18"/>
+            <Label x:Name="OSlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306,175,0,0" FontSize="18"/>
             <Label x:Name="CPUlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="195,10,0,0" FontSize="18"/>
+            <Label x:Name="GPU2" Content="Graphics Card 2:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,110,0,0" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="GPUlabel2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="288,110,0,0" FontSize="18"/>
         </Grid>
     </Border>
 

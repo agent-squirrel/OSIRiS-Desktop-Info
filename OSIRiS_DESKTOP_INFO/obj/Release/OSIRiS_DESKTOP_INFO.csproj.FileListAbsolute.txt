@@ -22,3 +22,4 @@ C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-D
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODI.g.resources
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODI.exe
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODI.pdb
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.csprojResolveAssemblyReference.cache

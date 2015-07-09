@@ -30,6 +30,7 @@ namespace OSIRiS_DESKTOP_INFO
             CPUlabel.Content += getcpu();
             RAMlabel.Content += getram();
             GPUlabel.Content += getgpu();
+            GPUlabel2.Content += getsecondarygpu();
             DRIVElabel.Content += getdrive();
             OSlabel.Content += getOS();
             RESlabel.Content += getres();
@@ -47,7 +48,7 @@ namespace OSIRiS_DESKTOP_INFO
                 }
                 catch { }
             }
-            return "CPU: Unknown";
+            return "Unknown";
         }
 
         public string getram()
@@ -62,7 +63,7 @@ namespace OSIRiS_DESKTOP_INFO
 		amount += Convert.ToInt32(Convert.ToInt64(mo["Capacity"]) / 1024 / 1024 / 1024);
 	}
 	return amount + " GB";
-        }
+    }
 
         public string getgpu()
         {
@@ -72,12 +73,39 @@ namespace OSIRiS_DESKTOP_INFO
             {
                 try
                 {
-                    return wmi.GetPropertyValue("Name").ToString();
+                    PropertyData currentBitsPerPixel = wmi.Properties["CurrentBitsPerPixel"];
+                    PropertyData description = wmi.Properties["Description"];
+                    if (currentBitsPerPixel != null && description != null)
+                    {
+                        if (currentBitsPerPixel.Value != null)
+                            return wmi.GetPropertyValue("Description").ToString();
+                    }
                 }
                 catch { }
             }
-            return "GPU: Unknown";
+            return "Unknown";
         }
+
+        public string getsecondarygpu()
+        {
+            ManagementObjectSearcher mos =
+            new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
+            foreach (ManagementObject wmi in mos.Get())
+            {
+                try
+                {
+                    PropertyData currentBitsPerPixel = wmi.Properties["CurrentBitsPerPixel"];
+                    PropertyData description = wmi.Properties["Description"];
+                    if (currentBitsPerPixel == null && description != null)
+                {
+                    if (currentBitsPerPixel.Value == null)
+                    return wmi.GetPropertyValue("Description").ToString();
+                }
+                }
+                catch { }
+            }
+            return "";
+           }    
 
         public string getdrive()
         {
@@ -110,7 +138,7 @@ namespace OSIRiS_DESKTOP_INFO
                 }
                 catch { }
             }
-            return "OS: Unknown";
+            return "Unknown";
         }
 
         public string getres()
@@ -125,7 +153,7 @@ namespace OSIRiS_DESKTOP_INFO
                 }
                 catch { }
             }
-            return "RES: Unknown";
+            return "Unknown";
         }
 
     }
