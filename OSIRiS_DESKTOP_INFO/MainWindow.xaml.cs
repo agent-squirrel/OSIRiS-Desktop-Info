@@ -155,7 +155,7 @@ namespace OSIRiS_DESKTOP_INFO
             }
             return "Unknown";
         }
-
+        private static string appGuid = "c0a76b5a-12ab-45c5-b9d9-d693faa6e7b9";
     }
 }
         
