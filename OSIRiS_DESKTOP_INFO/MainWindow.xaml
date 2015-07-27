@@ -21,7 +21,7 @@
             <Label x:Name="CPU" Content="CPU: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,10,0,0" FontSize="18" FontWeight="Bold"/>
             <Label x:Name="RAMlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="201,46,0,0" FontSize="18"/>
             <Label x:Name="GPUlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="288,78,0,0" FontSize="18"/>
-            <Label x:Name="RESlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="311,210,0,0" FontSize="18"/>
+            <Label x:Name="RESlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306,209,0,0" FontSize="18"/>
             <Label x:Name="DRIVElabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,142,0,0" FontSize="18"/>
             <Label x:Name="OSlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306,175,0,0" FontSize="18"/>
             <Label x:Name="CPUlabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="195,10,0,0" FontSize="18"/>
