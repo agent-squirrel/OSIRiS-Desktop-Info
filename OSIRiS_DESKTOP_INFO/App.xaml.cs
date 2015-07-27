@@ -22,7 +22,7 @@ namespace OSIRiS_DESKTOP_INFO
             {
                 if (!mutex.WaitOne(0, false))
                 {
-                    MessageBox.Show("ODI is already running.");
+                    MessageBox.Show("ODI is already running." + Environment.NewLine + "Only one copy of ODI can run at once.", "Already Running");
                     return;
                 }
 
