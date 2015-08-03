@@ -68,18 +68,12 @@ namespace OSIRiS_DESKTOP_INFO
         public string getgpu()
         {
             ManagementObjectSearcher mos =
-            new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
+            new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController WHERE DeviceID='VideoController1'");
             foreach (ManagementObject wmi in mos.Get())
             {
                 try
                 {
-                    PropertyData currentBitsPerPixel = wmi.Properties["CurrentBitsPerPixel"];
-                    PropertyData description = wmi.Properties["Description"];
-                    if (currentBitsPerPixel != null && description != null)
-                    {
-                        if (currentBitsPerPixel.Value != null)
-                            return wmi.GetPropertyValue("Description").ToString();
-                    }
+                    return wmi.GetPropertyValue("Description").ToString();
                 }
                 catch { }
             }
@@ -89,23 +83,19 @@ namespace OSIRiS_DESKTOP_INFO
         public string getsecondarygpu()
         {
             ManagementObjectSearcher mos =
-            new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
+            new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController WHERE DeviceID='VideoController2'");
             foreach (ManagementObject wmi in mos.Get())
             {
                 try
                 {
-                    PropertyData currentBitsPerPixel = wmi.Properties["CurrentBitsPerPixel"];
-                    PropertyData description = wmi.Properties["Description"];
-                    if (currentBitsPerPixel == null && description != null)
-                {
-                    if (currentBitsPerPixel.Value == null)
                     return wmi.GetPropertyValue("Description").ToString();
-                }
                 }
                 catch { }
             }
-            return "";
-           }    
+            return"No Secondary GPU";
+        }
+
+
 
         public string getdrive()
         {
@@ -155,7 +145,6 @@ namespace OSIRiS_DESKTOP_INFO
             }
             return "Unknown";
         }
-        private static string appGuid = "c0a76b5a-12ab-45c5-b9d9-d693faa6e7b9";
     }
 }
         
