@@ -26,6 +26,21 @@ namespace OSIRiS_DESKTOP_INFO
         {
             InitializeComponent();
 
+            //Parse command line arguments.
+            string[] args = Environment.GetCommandLineArgs();
+            string stringToCheck = "clear";
+            foreach (string x in args)
+            {
+                if (x.Contains(stringToCheck))
+                {
+                    clearancebanner.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    clearancebanner.Visibility = Visibility.Collapsed;
+                }
+            }
+
             //Initilize the labels with WMI queries.
             CPUlabel.Content += getcpu();
             RAMlabel.Content += getram();
