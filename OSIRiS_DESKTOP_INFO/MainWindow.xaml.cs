@@ -26,7 +26,7 @@ namespace OSIRiS_DESKTOP_INFO
         {
             InitializeComponent();
 
-            //Parse command line arguments.
+            //Parse command line arguments. If 'clear' is found, the 'Clearance' checkbox has been selected in OSIRiS.
             string[] args = Environment.GetCommandLineArgs();
             string stringToCheck = "clear";
             foreach (string x in args)
@@ -46,6 +46,24 @@ namespace OSIRiS_DESKTOP_INFO
             RAMlabel.Content += getram();
             GPUlabel.Content += getgpu();
             GPUlabel2.Content += getsecondarygpu();
+            //Peform some actions if we get a blank string back from the secondary GPU query.
+            if ((string)GPUlabel2.Content == "")
+            {
+                GPU2.Visibility = Visibility.Collapsed;
+                GPUlabel2.Visibility = Visibility.Collapsed;
+                DRIVE.Margin = new Thickness(140, 115, 0, 0);
+                DRIVElabel.Margin = new Thickness(238, 115, 0, 0);
+                OS.Margin = new Thickness(140, 153, 0, 0);
+                OSlabel.Margin = new Thickness(306, 153, 0, 0);
+                RES.Margin = new Thickness(140, 190, 0, 0);
+                RESlabel.Margin = new Thickness(306, 190, 0, 0);
+                GPUlabel.Margin = new Thickness(270, 78, 0, 0);
+                GPU1.Content += ":";
+            }
+            else
+            {
+                GPU1.Content += " 1:";
+            }
             DRIVElabel.Content += getdrive();
             OSlabel.Content += getOS();
             RESlabel.Content += getres();
@@ -69,16 +87,16 @@ namespace OSIRiS_DESKTOP_INFO
         public string getram()
         {
             ManagementScope ms = new ManagementScope();
-	ObjectQuery oq = new ObjectQuery("SELECT Capacity FROM Win32_PhysicalMemory");
-	ManagementObjectSearcher mos = new ManagementObjectSearcher(ms, oq);
-	ManagementObjectCollection moc = mos.Get();
-	int amount = 0;
-	foreach (ManagementObject mo in moc)
-	{
-		amount += Convert.ToInt32(Convert.ToInt64(mo["Capacity"]) / 1024 / 1024 / 1024);
-	}
-	return amount + " GB";
-    }
+	        ObjectQuery oq = new ObjectQuery("SELECT Capacity FROM Win32_PhysicalMemory");
+	        ManagementObjectSearcher mos = new ManagementObjectSearcher(ms, oq);
+	        ManagementObjectCollection moc = mos.Get();
+	        int amount = 0;
+	            foreach (ManagementObject mo in moc)
+	            {
+		            amount += Convert.ToInt32(Convert.ToInt64(mo["Capacity"]) / 1024 / 1024 / 1024);
+	            }
+	            return amount + " GB";
+        }
 
         public string getgpu()
         {
@@ -107,7 +125,7 @@ namespace OSIRiS_DESKTOP_INFO
                 }
                 catch { }
             }
-            return"No Secondary GPU";
+            return"";
         }
 
 

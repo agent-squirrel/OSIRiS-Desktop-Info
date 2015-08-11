@@ -14,7 +14,7 @@
     <Border BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="40,40,40,40" Background="White" Width="709" Height="254">
         <Grid>
             <Label x:Name="RAM" Content="RAM: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,46,0,0" FontSize="18" FontWeight="Bold" Grid.RowSpan="2"/>
-            <Label x:Name="GPU1" Content="Graphics Card 1:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,78,0,0" FontSize="18" FontWeight="Bold" Grid.RowSpan="2"/>
+            <Label x:Name="GPU1" Content="Graphics Card" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,78,0,0" FontSize="18" FontWeight="Bold" Grid.RowSpan="2"/>
             <Label x:Name="RES" Content="Screen Resolution: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,210,0,0" FontSize="18" FontWeight="Bold" Grid.RowSpan="2"/>
             <Label x:Name="DRIVE" Content="Drive Size:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,142,0,0" FontSize="18" FontWeight="Bold" Grid.RowSpan="2"/>
             <Label x:Name="OS" Content="Operating System:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,175,0,0" FontSize="18" FontWeight="Bold" Grid.RowSpan="2"/>
