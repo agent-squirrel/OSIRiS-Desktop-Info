@@ -23,3 +23,7 @@ C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-D
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODIN.g.resources
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODIN.exe
 C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODIN.pdb
+C:\Users\Adam\Documents\Visual Studio 2013\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.csprojResolveAssemblyReference.cache
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\bin\Release\ODIN.exe.config
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODIN.exe
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODIN.pdb
