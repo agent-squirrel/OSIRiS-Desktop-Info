@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("ODIN")]
 [assembly: AssemblyDescription("OSIRiS Desktop Info")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Project OSIRiS")]
 [assembly: AssemblyProduct("OSIRiS_DESKTOP_INFO")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
