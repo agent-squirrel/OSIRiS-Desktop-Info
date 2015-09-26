@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("odin_logo.fw.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("odin_logo.fw.png")]
 
 

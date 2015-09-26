@@ -29,8 +29,6 @@ C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-D
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODIN.pdb
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\bin\Release\ODIN.exe
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\bin\Release\ODIN.pdb
-C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.csprojResolveAssemblyReference.cache
-C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\App.baml
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\MainWindow.baml
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\App.g.cs
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\MainWindow.g.cs
@@ -38,3 +36,6 @@ C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-D
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODIN.g.resources
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.Properties.Resources.resources
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\OSIRiS_DESKTOP_INFO.csproj.GenerateResource.Cache
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\updater.g.cs
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\ODIN_MarkupCompile.lref
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\updater.baml

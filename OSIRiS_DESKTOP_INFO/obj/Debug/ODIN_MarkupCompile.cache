@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Release\
+C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\obj\Debug\
 OSIRiS_DESKTOP_INFO
 none
 false
-TRACE
+DEBUG;TRACE
 C:\Users\Adam\Documents\Visual Studio 2015\Projects\OSIRiS_DESKTOP_INFO\OSIRiS-Desktop-Info\OSIRiS_DESKTOP_INFO\App.xaml
 21496813752
 

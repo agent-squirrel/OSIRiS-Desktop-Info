@@ -1,10 +1,14 @@
 ﻿using System;
-using System.Management; 
+using System.Management;
 using System.Windows;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using System.Windows.Input;
+using System.Reflection;
+using System.Diagnostics;
+using System.Net;
+using System.IO;
 
 namespace OSIRiS_DESKTOP_INFO
 {
@@ -79,6 +83,13 @@ namespace OSIRiS_DESKTOP_INFO
                 {
                     clearancebanner.Visibility = Visibility.Collapsed;
                 }
+            }
+
+            //Check for an old copyt of ODIN.
+
+            if (File.Exists(@"C:\profiles\ODIN.exe.bak"))
+            {
+                File.Delete(@"C:\profiles\ODIN.exe.bak");
             }
 
             //Initilize the labels with WMI queries.
@@ -287,6 +298,34 @@ namespace OSIRiS_DESKTOP_INFO
         {
             //Set the Desktop wallpaper.
             Wallpaper.Set("wallpaper.bmp", Wallpaper.Style.Stretched);
+            //Update Check
+            string url = "https://gnuplusadam.com/OSIRiS/ODIN/version";
+            string versionstring;
+            using (var wc = new WebClient())
+                try
+                {
+                    versionstring = wc.DownloadString(url);
+                    Version latestVersion = new Version(versionstring);
+                    //Get current binary version.
+                    Assembly assembly = Assembly.GetExecutingAssembly();
+                    FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+                    Version currentVersion = new Version(fvi.FileVersion);
+                    //Compare.
+                    if (latestVersion > currentVersion)
+                    {
+                        updater updatewindow = new updater();
+                        updatewindow.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                catch (WebException)
+                {
+                    return;
+                }
         }
    }
 }
