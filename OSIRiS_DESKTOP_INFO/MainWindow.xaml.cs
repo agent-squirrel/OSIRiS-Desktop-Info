@@ -1,7 +1,7 @@
 ﻿using System;
+using Microsoft.Win32;
 using System.Management;
 using System.Windows;
-using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using System.Windows.Input;
@@ -69,6 +69,8 @@ namespace OSIRiS_DESKTOP_INFO
         public MainWindow()
         {
             InitializeComponent();
+            // Subscribe to the powermodechanged Win32 event.
+            SystemEvents.PowerModeChanged += this.SystemEvents_PowerModeChanged;
             ShowActivated = false;
             //Parse command line arguments. If 'clear' is found, the 'Clearance' checkbox has been selected in OSIRiS.
             string[] args = Environment.GetCommandLineArgs();
@@ -85,7 +87,7 @@ namespace OSIRiS_DESKTOP_INFO
                 }
             }
 
-            //Check for an old copyt of ODIN.
+            //Check for an old copy of ODIN.
 
             if (File.Exists(@"C:\profiles\ODIN.exe.bak"))
             {
@@ -306,10 +308,12 @@ namespace OSIRiS_DESKTOP_INFO
                 {
                     versionstring = wc.DownloadString(url);
                     Version latestVersion = new Version(versionstring);
+
                     //Get current binary version.
                     Assembly assembly = Assembly.GetExecutingAssembly();
                     FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
                     Version currentVersion = new Version(fvi.FileVersion);
+
                     //Compare.
                     if (latestVersion > currentVersion)
                     {
@@ -327,7 +331,24 @@ namespace OSIRiS_DESKTOP_INFO
                     return;
                 }
         }
-   }
+
+        // Recenter and un-minimize the main window on resume from suspend. 
+        private void SystemEvents_PowerModeChanged(object sender, PowerModeChangedEventArgs e)
+        {
+            if (e.Mode == PowerModes.Resume)
+            {
+                // Un-minimize.
+                if (this.WindowState == WindowState.Minimized)
+                    this.WindowState = WindowState.Normal;
+
+                // Re-Center
+                double screeHeight = SystemParameters.FullPrimaryScreenHeight;
+                double screeWidth = SystemParameters.FullPrimaryScreenWidth;
+                this.Top = (screeHeight - this.Height) / 2;
+                this.Left = (screeWidth - this.Width) / 2;
+            }
+        }
+    }
 }
 
 

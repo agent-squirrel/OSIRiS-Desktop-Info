@@ -13,6 +13,7 @@ namespace OSIRiS_DESKTOP_INFO
     /// </summary>
     public partial class updater : Window
     {
+
         WebClient webClient;
         public updater()
         {
@@ -122,5 +123,6 @@ namespace OSIRiS_DESKTOP_INFO
             Process.Start("ODIN.exe");
             Application.Current.Shutdown();
         }
+
     }
 }
