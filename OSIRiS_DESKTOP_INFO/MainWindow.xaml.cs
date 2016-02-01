@@ -348,6 +348,27 @@ namespace OSIRiS_DESKTOP_INFO
                 this.Left = (screeWidth - this.Width) / 2;
             }
         }
+
+        //Handle key combo to launch Reconfigure_ODIN
+        private void ODIN_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            // Ctrl + Shift + R 
+            if ((Keyboard.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift)) && (e.Key == Key.R))
+            {
+                try {
+                    Process reconfigure_ODIN = new Process();
+                    reconfigure_ODIN.StartInfo.FileName = @"C:\profiles\Reconfigure_ODIN.exe";
+                    reconfigure_ODIN.Start();
+                    reconfigure_ODIN.WaitForExit();
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The ODIN reconfiguration utility is missing." + Environment.NewLine + "Please contact support via forwarder@gnuplusadam.com" + Environment.NewLine + ex.Message);
+                }
+            }
+        }
     }
 }
 
