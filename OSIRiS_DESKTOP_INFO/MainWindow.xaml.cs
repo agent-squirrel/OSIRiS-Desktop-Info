@@ -365,7 +365,7 @@ namespace OSIRiS_DESKTOP_INFO
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("The ODIN reconfiguration utility is missing." + Environment.NewLine + "Please contact support via forwarder@gnuplusadam.com" + Environment.NewLine + ex.Message);
+                    MessageBox.Show("The ODIN reconfiguration utility is missing." + Environment.NewLine + "Either ODIN is running without ORISiS or the utility has been deleted." + Environment.NewLine + "Please contact support via forwarder@gnuplusadam.com" + Environment.NewLine + ex.Message);
                 }
             }
         }
