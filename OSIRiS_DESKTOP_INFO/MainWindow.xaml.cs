@@ -17,41 +17,6 @@ namespace OSIRiS_DESKTOP_INFO
     /// </summary>
     public partial class MainWindow : Window
     {
-        //BEGIN ENVIRON LOGIC//
-
-        //Import DLLs for attaching ODIN to the Desktop.
-        [DllImport("user32.dll")]
-        static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-
-        //Attach ODIN to the Desktop process.
-        public static void SetOnDesktop(Window window)
-        {
-            IntPtr hWnd = new WindowInteropHelper(window).Handle;
-            IntPtr hWndProgMan = FindWindow("Progman", "Program Manager");
-            SetParent(hWnd, hWndProgMan);
-        }
-
-        //Prevent focus stealing.
-        protected override void OnActivated(EventArgs e)
-        {
-            base.OnActivated(e);
-
-            //Set the window style to noactivate.
-            WindowInteropHelper helper = new WindowInteropHelper(this);
-            SetWindowLong(helper.Handle, GWL_EXSTYLE,
-                GetWindowLong(helper.Handle, GWL_EXSTYLE) | WS_EX_NOACTIVATE);
-        }
-
-        private const int GWL_EXSTYLE = -20;
-        private const int WS_EX_NOACTIVATE = 0x08000000;
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
-
-        [DllImport("user32.dll")]
-        public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
 
         //Suppress ALT+F4 closure of form.
         private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -62,9 +27,6 @@ namespace OSIRiS_DESKTOP_INFO
             }
         }
 
-
-
-        //END ENVIRON LOGIC//
 
         public MainWindow()
         {
@@ -350,7 +312,7 @@ namespace OSIRiS_DESKTOP_INFO
         }
 
         //Handle key combo to launch Reconfigure_ODIN
-        private void ODIN_KeyDown(object sender, KeyEventArgs e)
+        public void ODIN_KeyUp(object sender, KeyEventArgs e)
         {
 
             // Ctrl + Shift + R 

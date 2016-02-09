@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Threading;
 using System.Windows;
@@ -59,6 +60,7 @@ namespace OSIRiS_DESKTOP_INFO
             }
             else
             {
+                ZipFile.ExtractToDirectory(Path.GetTempPath() + "ODIN.zip", ".");
                 copy();
             }
         }
@@ -79,13 +81,18 @@ namespace OSIRiS_DESKTOP_INFO
                 {
                     // Rename the ODIN executable so we can copy a new one into it's place.
                     File.Move("ODIN.exe", "ODIN.exe.bak");
+                    // Delete the current Reconfigure_ODIN executable if it exists.
+                    if (File.Exists("Reconfigure_ODIN.exe"))
+                    {
+                        File.Delete("Reconfigure_ODIN.exe");
+                    }
                 }
             }
         }
         private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             // Download the new version of ODIN.
-            DownloadFile("https://gnuplusadam.com/OSIRiS/ODIN/ODIN.exe", System.IO.Path.GetTempPath() + "ODIN.exe");
+            DownloadFile("https://gnuplusadam.com/OSIRiS/ODIN/ODIN.zip", System.IO.Path.GetTempPath() + "ODIN.zip");
         }
 
         private void copy()
@@ -111,8 +118,9 @@ namespace OSIRiS_DESKTOP_INFO
                 }
                 else
                 {
-                    // Move the new ODIN executable into the C:\profiles\ directory.
+                    // Move the new ODIN executable into the C:\profiles\ directory along with it's reconfiguration utility.
                     File.Move(System.IO.Path.GetTempPath() + "ODIN.exe", @"C:\profiles\ODIN.exe");
+                    File.Move(System.IO.Path.GetTempPath() + "Reconfigure_ODIN.exe", @"C:\profiles\Reconfigure_ODIN.exe");
                 }
             }
         }
