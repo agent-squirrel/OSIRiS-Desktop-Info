@@ -91,8 +91,18 @@ namespace OSIRiS_DESKTOP_INFO
         }
         private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            // Download the new version of ODIN.
-            DownloadFile("https://gnuplusadam.com/OSIRiS/ODIN/ODIN.zip", System.IO.Path.GetTempPath() + "ODIN.zip");
+            try
+            {
+                // Download the new version of ODIN.
+                DownloadFile("https://gnuplusadam.com/OSIRiS/ODIN/ODIN.zip", System.IO.Path.GetTempPath() + "ODIN.zip");
+            }
+            catch (WebException)
+            {
+                var specs = new MainWindow();
+                File.Move("ODIN.exe", "ODIN.exe.bak");
+                this.Close();
+                specs.Show();
+            }
         }
 
         private void copy()

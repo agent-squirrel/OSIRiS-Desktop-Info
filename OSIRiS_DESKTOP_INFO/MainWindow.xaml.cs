@@ -3,7 +3,6 @@ using Microsoft.Win32;
 using System.Management;
 using System.Windows;
 using System.Runtime.InteropServices;
-using System.Windows.Interop;
 using System.Windows.Input;
 using System.Reflection;
 using System.Diagnostics;
@@ -18,7 +17,7 @@ namespace OSIRiS_DESKTOP_INFO
     public partial class MainWindow : Window
     {
 
-        //Suppress ALT+F4 closure of form.
+        //Suppress ALT+F4 closure of the Window.
         private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (Keyboard.Modifiers == ModifierKeys.Alt && e.SystemKey == Key.F4)
@@ -327,7 +326,7 @@ namespace OSIRiS_DESKTOP_INFO
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("The ODIN reconfiguration utility is missing." + Environment.NewLine + "Either ODIN is running without ORISiS or the utility has been deleted." + Environment.NewLine + "Please contact support via forwarder@gnuplusadam.com" + Environment.NewLine + ex.Message);
+                    MessageBox.Show("The ODIN reconfiguration utility is missing." + Environment.NewLine + "Either ODIN is running without ORIRiS or the utility has been deleted." + Environment.NewLine + "Please contact support via forwarder@gnuplusadam.com" + Environment.NewLine + ex.Message);
                 }
             }
         }
