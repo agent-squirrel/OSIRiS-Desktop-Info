@@ -54,15 +54,19 @@ namespace OSIRiS_DESKTOP_INFO
             {
                 File.Delete(@"C:\profiles\ODIN.exe.bak");
             }
+            if (File.Exists(@"ODIN.exe.bak"))
+            {
+                File.Delete(@"ODIN.exe.bak");
+            }
 
             //Initilize the labels with WMI queries.
             CPUlabel.Content += getcpu();
             RAMlabel.Content += getram();
-            GPUlabel.Content += getgpu();
-            GPUlabel2.Content += getsecondarygpu();
+            GPUlabel.Content += getgpu() + " with" + " " + getgpuadapterRAM() + " of VRAM";
+            GPUlabel2.Content += getsecondarygpu() + " with" + " " + getsecondarygpuadapterRAM() + " of VRAM";
             //Peform some actions if we get a blank string back from the secondary GPU query.
-            if ((string)GPUlabel2.Content == "" || (string)GPUlabel2.Content == "Microsoft Basic Render Driver" )
-            {
+            if ((string)getsecondarygpu() == "" || (string)getsecondarygpu() == "Microsoft Basic Render Driver" )
+            { 
                 GPU2.Visibility = Visibility.Collapsed;
                 GPUlabel2.Visibility = Visibility.Collapsed;
                 DRIVE.Margin = new Thickness(140, 115, 0, 0);
@@ -129,6 +133,20 @@ namespace OSIRiS_DESKTOP_INFO
             return "Unknown";
         }
 
+        public string getgpuadapterRAM()
+        {
+            ManagementScope ms = new ManagementScope();
+            ObjectQuery oq = new ObjectQuery("SELECT AdapterRAM FROM Win32_VideoController WHERE DeviceID='VideoController1'");
+            ManagementObjectSearcher mos = new ManagementObjectSearcher(ms, oq);
+            ManagementObjectCollection moc = mos.Get();
+            int amount = 0;
+            foreach (ManagementObject mo in moc)
+            {
+                amount += Convert.ToInt32(Convert.ToInt64(mo["AdapterRAM"]) / 1024 / 1024);
+            }
+            return amount + " MB";
+        }
+
         public string getsecondarygpu()
         {
             ManagementObjectSearcher mos =
@@ -142,6 +160,20 @@ namespace OSIRiS_DESKTOP_INFO
                 catch { }
             }
             return "";
+        }
+
+        public string getsecondarygpuadapterRAM()
+        {
+            ManagementScope ms = new ManagementScope();
+            ObjectQuery oq = new ObjectQuery("SELECT AdapterRAM FROM Win32_VideoController WHERE DeviceID='VideoController2'");
+            ManagementObjectSearcher mos = new ManagementObjectSearcher(ms, oq);
+            ManagementObjectCollection moc = mos.Get();
+            int amount = 0;
+            foreach (ManagementObject mo in moc)
+            {
+                amount += Convert.ToInt32(Convert.ToInt64(mo["AdapterRAM"]) / 1024 / 1024);
+            }
+            return amount + " MB";
         }
 
         public string getdrive()
@@ -310,24 +342,62 @@ namespace OSIRiS_DESKTOP_INFO
             }
         }
 
-        //Handle key combo to launch Reconfigure_ODIN
+        // Handle key combos.
         public void ODIN_KeyUp(object sender, KeyEventArgs e)
         {
 
+            // Reconfiguration Utility.
             // Ctrl + Shift + R 
             if ((Keyboard.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift)) && (e.Key == Key.R))
             {
                 try {
                     Process reconfigure_ODIN = new Process();
-                    reconfigure_ODIN.StartInfo.FileName = @"C:\profiles\Reconfigure_ODIN.exe";
+                    reconfigure_ODIN.StartInfo.FileName = @"Reconfigure_ODIN.exe";
                     reconfigure_ODIN.Start();
                     reconfigure_ODIN.WaitForExit();
                     return;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("The ODIN reconfiguration utility is missing." + Environment.NewLine + "Either ODIN is running without ORIRiS or the utility has been deleted." + Environment.NewLine + "Please contact support via forwarder@gnuplusadam.com" + Environment.NewLine + ex.Message);
+                    MessageBox.Show("The ODIN reconfiguration utility is missing." + Environment.NewLine + "Either ODIN is running without OSIRiS or the utility has been deleted." + Environment.NewLine + "Please contact support via forwarder@gnuplusadam.com and include this error message:" + Environment.NewLine + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 }
+            }
+
+            // Force update.
+            // Ctrl + Shift + U 
+            if ((Keyboard.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift)) && (e.Key == Key.U))
+            {
+                string url = "https://gnuplusadam.com/OSIRiS/ODIN/version";
+                string versionstring;
+                using (var wc = new System.Net.WebClient())
+                    try
+                    {
+                        versionstring = wc.DownloadString(url);
+                        Version latestVersion = new Version(versionstring);
+                        MessageBoxResult updateconfirm = MessageBox.Show(String.Format("Would you like to update to version {0}?", latestVersion), "Forced Update?", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                        if (updateconfirm == MessageBoxResult.Yes)
+                        {
+                            var form = new updater();
+                            this.Hide();
+                            form.Show();
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    catch (WebException)
+                    {
+                        return;
+                    }
+            }
+
+            // Force quit.
+            // Ctrl + Shift + Q
+            if ((Keyboard.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift)) && (e.Key == Key.Q))
+            {
+                Application.Current.Shutdown();
+                return;
             }
         }
     }
