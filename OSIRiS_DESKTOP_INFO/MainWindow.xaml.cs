@@ -352,7 +352,7 @@ namespace OSIRiS_DESKTOP_INFO
             {
                 try {
                     Process reconfigure_ODIN = new Process();
-                    reconfigure_ODIN.StartInfo.FileName = @"Reconfigure_ODIN.exe";
+                    reconfigure_ODIN.StartInfo.FileName = @"C:\profiles\Reconfigure_ODIN.exe";
                     reconfigure_ODIN.Start();
                     reconfigure_ODIN.WaitForExit();
                     return;
